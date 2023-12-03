@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bannerbg {
+  background: url("https://i.ibb.co/q7Pm2Jk/italian-pasta-shells-with-mushrooms-zucchini-tomato-sauce-min.jpg"),
+    linear-gradient(to left, #0707078e, #0e0d0db0);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
