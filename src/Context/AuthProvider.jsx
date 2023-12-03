@@ -7,7 +7,6 @@ import {
   signOut,
   signInWithPopup,
 } from "firebase/auth";
-// import useAxios from "../Hooks/useAxios";
 import { auth } from "../Firebase Configs/firebase,config,js";
 
 export const AuthContext = createContext(null);
