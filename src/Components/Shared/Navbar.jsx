@@ -198,7 +198,7 @@ const Navbar = () => {
                 } shadow bg-base-100 rounded-box w-max`}
               >
                 <div>
-                  <p className="text-lg text-center mt-1 mb-5">
+                  <p className="text-lg font-medium font-logoFont text-center mt-1 mb-5">
                     {user.displayName}
                   </p>
                   <Link

@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .bannerbg {
-  background: url("https://i.ibb.co/q7Pm2Jk/italian-pasta-shells-with-mushrooms-zucchini-tomato-sauce-min.jpg"),
-    linear-gradient(to left, #0707078e, #0e0d0db0);
+  background: url("https://i.ibb.co/3vjPV39/banner-image.jpg"),
+    linear-gradient(to left, #07070700, #000000);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-size: cover;
