@@ -114,7 +114,7 @@ const Navbar = () => {
   // );
 
   return (
-    <div className="navbar shadow-lg w-full dark:bg-slate-600 dark:text-white lg:px-12 mx-auto">
+    <div className="navbar fixed top-0 opacity-90 bg-white dark:opacity-80 shadow-lg w-full dark:bg-slate-900 dark:text-white lg:px-12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown" onClick={() => setOpen(!open)}>
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -143,13 +143,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link to="/" className="text-2xl">
+        <Link to="/" className="text-xl">
           <span className="flex items-center">
             <img
               src="https://i.ibb.co/rbKnJvy/logo.png"
               className="w-10 md:w-12 lg:w-20 mr-1"
             />
-            <span className="font-medium font-logoFont dark:text-white text-sm md:text-xl lg:text-3xl">
+            <span className="font-medium font-logoFont dark:text-white text-sm md:text-xl lg:text-2xl">
               Pick
               <span className="text-indigo-600 dark:text-indigo-300">
                 'n Drop

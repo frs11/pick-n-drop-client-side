@@ -13,7 +13,7 @@ const Banner = () => {
               </span>
               <br />
             </span>
-            Simplifying Parcel Delivery for You!
+            Simplifying Parcel Delivery <br /> for You!
           </p>
           <p className="text-xs md:text-sm text-gray-300 px-5 lg:px-10">
             Experience the ease of seamless parcel delivery with Pick'n Drop!
@@ -23,6 +23,20 @@ const Banner = () => {
             convenience.
           </p>
         </div>
+      </div>
+      <div className="flex flex-col items-center justify-center">
+        <span className="mb-2 bg-slate-600 opacity-70 px-3 py-1 rounded-md text-xl font-thin text-white">
+          Search Here
+        </span>
+        <input
+          type="text"
+          name="search"
+          placeholder="Type here..."
+          className="px-2 py-1 rounded text-sm bg-slate-600 text-white"
+        />
+        <button className="px-3 py-1 mt-1 rounded-md border-indigo-500 border bg-indigo-600 text-white">
+          Search
+        </button>
       </div>
     </div>
   );

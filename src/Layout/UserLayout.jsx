@@ -4,7 +4,7 @@ import Footer from "../Components/Shared/Footer";
 
 const UserLayout = () => {
   return (
-    <div>
+    <div className="relative">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
