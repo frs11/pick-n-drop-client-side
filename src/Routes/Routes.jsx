@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import RestrictedRoutes from "./RestrictedRoutes";
 import Profile from "../Components/Dashboard/User Dashboard/Profile";
 import BookaParcel from "../Components/Dashboard/User Dashboard/BookaParcel";
+import MyParcel from "../Components/Dashboard/User Dashboard/MyParcel";
 
 const url = "http://localhost:5000";
 
@@ -59,7 +60,7 @@ const customRoutes = createBrowserRouter([
       },
       {
         path: "myParcel",
-        element: <BookaParcel></BookaParcel>,
+        element: <MyParcel></MyParcel>,
       },
     ],
   },

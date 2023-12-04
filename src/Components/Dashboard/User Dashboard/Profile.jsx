@@ -24,7 +24,7 @@ const Profile = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Restora | {user.displayName} | User Profile </title>
+        <title>Pick n drop | {user.displayName} | User Profile </title>
       </Helmet>
       <div className="w-full mx-auto my-10">
         <h1 className="text-4xl text-center">
