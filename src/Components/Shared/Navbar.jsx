@@ -106,12 +106,6 @@ const Navbar = () => {
       </span>
     </>
   );
-  // const AvatarLinks = (
-  //   <>
-  //     <h1>{user.displayName}</h1>
-
-  //   </>
-  // );
 
   return (
     <div className="navbar sticky z-50 top-0 bg-opacity-90 bg-white dark:opacity-80 shadow-lg w-full dark:bg-slate-900 dark:text-white lg:px-12 mx-auto">

@@ -1,7 +1,13 @@
-const AdminDashboard = () => {
+import { Outlet } from "react-router-dom";
+import Sidebar from "../../Shared/Sidebar";
+
+const AdminDashboard = ({ userRole }) => {
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="flex flex-row">
+      <Sidebar role={userRole}></Sidebar>
+      <div className="flex-grow">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
