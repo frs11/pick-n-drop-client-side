@@ -56,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-900 dark:text-white">
+    <div className="hero min-h-screen bg-base-900 dark:text-white dark:bg-slate-500">
       <Helmet>
         <title>Pick'n Drop | Login | Log into your Account</title>
       </Helmet>

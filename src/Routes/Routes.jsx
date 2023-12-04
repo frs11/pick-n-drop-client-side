@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import Homepage from "../Pages/Homepage";
 import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
+import DashBoard from "../Layout/DashBoard";
 
 const customRoutes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const customRoutes = createBrowserRouter([
         element: <Registration></Registration>,
       },
     ],
+  },
+  {
+    path: "dashboard",
+    element: <DashBoard></DashBoard>,
   },
 ]);
 
