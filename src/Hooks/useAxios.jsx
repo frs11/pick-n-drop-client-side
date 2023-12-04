@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosSecure = axios.create({
-  baseURL: "https://restaurant-manager-server.vercel.app",
+  baseURL: "http://localhost:5000",
   withCredentials: true,
 });
 

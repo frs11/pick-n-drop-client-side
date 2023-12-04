@@ -1,14 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import swal from "sweetalert";
 import { AuthContext } from "../Context/AuthProvider";
+import { axiosSecure } from "../Hooks/useAxios";
 
 const Registration = () => {
   const { createNewUser } = useContext(AuthContext);
+  const [userType, setUserType] = useState("user");
   const navigate = useNavigate();
+  // console.log(userType);
+
+  const handleUserType = (e) => {
+    const SelectedUserType = e.target.value;
+    setUserType(SelectedUserType);
+  };
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -17,6 +25,7 @@ const Registration = () => {
     const image = form.get("photourl");
     const userEmail = form.get("email");
     const userPassword = form.get("password");
+    // console.log(userPassword);
 
     if (userPassword.length < 6) {
       e.target.reset();
@@ -47,11 +56,24 @@ const Registration = () => {
           displayName: userName,
           email: userEmail,
           photoURL: image,
+          role: userType,
         });
-        e.target.reset();
-        console.log(user);
-        swal("Congratulations!", "Signed Up Successfully!", "success");
-        navigate("/", { replace: true });
+        const userInfo = {
+          name: userName,
+          email: userEmail,
+          role: userType,
+        };
+        axiosSecure
+          .post("/newUsers", userInfo)
+          .then((res) => {
+            if (res.data.insertedId) {
+              e.target.reset();
+              // console.log(user);
+              swal("Congratulations!", "Signed Up Successfully!", "success");
+              navigate("/", { replace: true });
+            }
+          })
+          .catch((err) => console.log(err));
       })
       .catch((err) => {
         e.target.reset();
@@ -59,7 +81,7 @@ const Registration = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-900 dark:bg-slate-500 dark:text-white">
+    <div className="hero min-h-screen pt-12 bg-base-900 dark:bg-slate-500 dark:text-white">
       <Helmet>
         <title>Pick'n Drop | Registration | Register Your Account</title>
       </Helmet>
@@ -118,6 +140,22 @@ const Registration = () => {
                 required
               />
             </div>
+
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text dark:text-white">User Type</span>
+              </label>
+              <select
+                onChange={handleUserType}
+                name="user-type"
+                placeholder="Select User Type"
+                className="border dark:border-none px-2 py-2 dark:bg-slate-700 rounded-md border-gray-300 dark:text-white"
+              >
+                <option value="User">User</option>
+                <option value="deliveryMan">Delivery Man</option>
+              </select>
+            </div>
+
             <div className="form-control mt-6">
               <button className="py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-lg ease-in-out duration-300 text-white font-semibold">
                 Sign Up

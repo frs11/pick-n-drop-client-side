@@ -21,14 +21,13 @@ const Login = () => {
 
     UserLogin(userEmail, userPassword)
       .then(() => {
-        const email = { userEmail };
-
-        axiosSecure.post("/jwt", email).then((res) => {
-          console.log(res.data);
-          event.target.reset();
-          swal("Congratulations!", "You logged in Successfully!", "success");
-          navigate(location?.state ? location.state : "/", { replace: true });
-        });
+        // const email = { userEmail };
+        // axiosSecure.post("/jwt", email).then((res) => {
+        //   console.log(res.data);
+        //   event.target.reset();
+        swal("Congratulations!", "You logged in Successfully!", "success");
+        navigate(location?.state ? location.state : "/", { replace: true });
+        // });
       })
       .catch((err) => {
         swal(err.message, "Try again", "warning");
@@ -41,13 +40,34 @@ const Login = () => {
     loginWithGoogle()
       .then((res) => {
         const user = res.user;
-        const { email } = user;
+        // user.role = "user";
+        // const { email } = user;
+        const userInfo = {
+          name: user.displayName,
+          email: user.email,
+          role: "user",
+        };
+        axiosSecure
+          .post("/newUsers", userInfo)
+          .then((res) => {
+            if (res.data.insertedId) {
+              // console.log(user);
+              swal("Welcome!", "Signed Up Successfully!", "success");
+              navigate("/", { replace: true });
+            }
+            if (res.data.message) {
+              // console.log(user);
+              swal("Welcome Back!", "Logged in Successfully!", "success");
+              navigate("/", { replace: true });
+            }
+          })
+          .catch((err) => console.log(err));
 
-        axiosSecure.post("/jwt", email).then((res) => {
-          console.log(res.data);
-          swal("Congratulations!", "You logged in Successfully!", "success");
-          navigate(location?.state ? location.state : "/", { replace: true });
-        });
+        // axiosSecure.post("/jwt", email).then((res) => {
+        //   console.log(res.data);
+        //   swal("Congratulations!", "You logged in Successfully!", "success");
+        //   navigate(location?.state ? location.state : "/", { replace: true });
+        // });
       })
       .catch((err) => {
         swal(err.message, "", "warning");

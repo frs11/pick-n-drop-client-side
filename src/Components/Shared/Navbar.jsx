@@ -114,7 +114,7 @@ const Navbar = () => {
   // );
 
   return (
-    <div className="navbar fixed top-0 opacity-90 bg-white dark:opacity-80 shadow-lg w-full dark:bg-slate-900 dark:text-white lg:px-12 mx-auto">
+    <div className="navbar sticky z-50 top-0 bg-opacity-90 bg-white dark:opacity-80 shadow-lg w-full dark:bg-slate-900 dark:text-white lg:px-12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown" onClick={() => setOpen(!open)}>
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -209,7 +209,7 @@ const Navbar = () => {
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="px-1 py-px mt-6 block text-sm lg:text-base lg:px-5 lg:py-2 border duration-150 ease-in-out border-red-700 hover:border-red-300 bg-red-700 hover:text-white font-medium rounded-md"
+                    className="px-1 py-px mt-10 block text-sm lg:text-base lg:px-5 lg:py-2 border duration-150 ease-in-out border-red-700 hover:border-red-300 bg-red-700 text-white font-medium rounded-md"
                   >
                     Sign Out
                   </button>

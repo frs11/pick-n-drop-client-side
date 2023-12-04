@@ -17,3 +17,9 @@ A beautiful website for managing a parcel Delivery System.
 - Profile creation.
 - User friendly UI.
 - Sweet Alert.
+
+<!--Admin Email: admin@gmail.com -->
+<!--Admin Password: Admin123! -->
+
+<!-- Delivery Man Email: delivery@man.com -->
+<!-- Delivery Man Password: Deliveryman1! -->
