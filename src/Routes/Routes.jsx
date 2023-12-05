@@ -15,8 +15,8 @@ import AllDeliveryman from "../Components/Dashboard/Admin Dashboard/AllDeliverym
 import Allparcels from "../Components/Dashboard/Admin Dashboard/Allparcels";
 import Statistics from "../Components/Dashboard/Admin Dashboard/Statistics";
 
-// const url = "https://parcel-delivery-server-one.vercel.app";
-const url = "http://localhost:5000";
+const url = "https://parcel-delivery-server-one.vercel.app";
+// const url = "http://localhost:5000";
 
 const customRoutes = createBrowserRouter([
   {
