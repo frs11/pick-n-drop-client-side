@@ -18,10 +18,10 @@ const AllUsers = () => {
         <table className="table mx-4 mt-3">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Make Admin</th>
-              <th>Make Delivery Man</th>
+              <th className="text-black dark:text-white">Name</th>
+              <th className="text-black dark:text-white">Email</th>
+              <th className="text-black dark:text-white">Make Admin</th>
+              <th className="text-black dark:text-white">Make Delivery Man</th>
             </tr>
           </thead>
           <tbody>

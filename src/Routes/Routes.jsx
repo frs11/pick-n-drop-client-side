@@ -80,6 +80,7 @@ const customRoutes = createBrowserRouter([
       {
         path: "allParcel",
         element: <Allparcels></Allparcels>,
+        loader: () => fetch(`${url}/allparcels`),
       },
       {
         path: "statistics",
